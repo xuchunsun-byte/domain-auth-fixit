@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Domain Auth Fix-it — SPF, DKIM &amp; DMARC checklist</title>
+  <meta name="description" content="Paste your sending domain. Get a health score and plain-English Fix-it checklist. DNS health ≠ inbox guarantee.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="./">
+        <p class="brand-name">Domain Auth Fix-it</p>
+        <p class="brand-tag">Plain-English SPF, DKIM &amp; DMARC fixes for senders who ship mail.</p>
+      </a>
+      <span class="badge">$12 Fix-it</span>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <div id="cancelled-banner" class="banner-cancel" hidden>
+        <h2>Checkout cancelled</h2>
+        <p>No charge was made. You can try again whenever you’re ready, or keep using the free summary below.</p>
+        <p data-cancelled-domain class="micro"></p>
+      </div>
+
+      <section>
+        <h1>Fix your domain auth before the next cold email or newsletter blast.</h1>
+        <p class="lede">Paste your sending domain. Get a health score, the Top 3 blockers, and a Fix-it checklist—without another raw DNS dump.</p>
+        <div class="disclaimer" role="note">
+          <strong>Disclaimer:</strong> DNS health ≠ inbox guarantee. Passing SPF/DKIM/DMARC does not promise inbox placement, open rates, or deliverability outcomes.
+        </div>
+
+        <form id="check-form" class="card" action="#" method="post">
+          <div class="field">
+            <label for="domain">Sending domain</label>
+            <input id="domain" name="domain" type="text" required placeholder="yourdomain.com" autocomplete="off" spellcheck="false">
+          </div>
+          <div class="field">
+            <label for="selector">DKIM selector <span class="opt">(optional)</span></label>
+            <input id="selector" name="selector" type="text" placeholder="Leave blank to auto-probe common ESP selectors" autocomplete="off" spellcheck="false">
+          </div>
+          <p id="form-error" class="form-error" hidden></p>
+          <button id="submit-btn" class="btn btn-primary" type="submit">Check my domain</button>
+          <p class="micro">Free summary. Full Fix-it report unlocks for $12 once. DNS health ≠ inbox guarantee.</p>
+        </form>
+
+        <div id="results" hidden></div>
+      </section>
+
+      <section>
+        <h2>How it works</h2>
+        <ol class="steps">
+          <li><strong>Paste your domain</strong> — Optionally add a DKIM selector if you know it (Resend, Postmark, Google Workspace, Brevo, etc.).</li>
+          <li><strong>We check public DNS</strong> — MX, SPF (including lookup count vs the 10 limit), DKIM, DMARC, and BIMI via DoH—no mail send required.</li>
+          <li><strong>Get a Fix-it list</strong> — Free: score + Top 3. Paid: full checklist with suggested records and where to paste them, emailed after the $12 purchase.</li>
+        </ol>
+      </section>
+
+      <section class="tier-grid">
+        <div class="tier">
+          <h3>Free (L0)</h3>
+          <ul>
+            <li>Health score (0–100)</li>
+            <li>Top 3 issues, plain English</li>
+            <li>Summary shown on this page (no shareable backend link)</li>
+          </ul>
+        </div>
+        <div class="tier tier-paid">
+          <h3>Domain Auth Fix-it Report — $12 one-time (L1)</h3>
+          <ul>
+            <li>Full issue list: problem → impact → suggested DNS record → where to paste</li>
+            <li>SPF lookup count guidance</li>
+            <li>DKIM selectors found (or common probes tried)</li>
+            <li>DMARC policy notes (<code>p=none</code> called out for production senders)</li>
+            <li>BIMI status (nice-to-have)</li>
+            <li>Markdown report emailed for docs / clients / your ESP ticket</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="prose">
+        <h2>ESP selector note</h2>
+        <p>Leave the selector blank and we’ll probe common ones used by popular ESPs, including:</p>
+        <ul>
+          <li><strong>Google Workspace</strong> — <code>google</code></li>
+          <li><strong>Microsoft 365</strong> — <code>selector1</code>, <code>selector2</code></li>
+          <li><strong>Postmark</strong> — <code>pm</code> (and related)</li>
+          <li><strong>Amazon SES</strong> — <code>amazonses</code></li>
+          <li><strong>Brevo</strong> — <code>brevo</code></li>
+          <li><strong>HubSpot</strong> — <code>hs1</code>, <code>hs2</code></li>
+          <li>Also tried: <code>s1</code>, <code>s2</code>, <code>k1</code>, <code>default</code></li>
+        </ul>
+        <p>If your ESP documents a custom selector, paste it for a precise hit.</p>
+      </section>
+
+      <section class="prose">
+        <h2>Who it’s for</h2>
+        <p>Indie newsletter operators and SaaS founders who already send (or are about to) and need auth fixed—not a $99/mo consultant stack or a seed-inbox lab.</p>
+        <p class="muted">Not for: warmup farms, inbox-placement % shopping, or AI cold-email copy.</p>
+      </section>
+
+      <section class="faq">
+        <h2>FAQ</h2>
+        <p class="q">Do you send a test email?</p>
+        <p>No. We only read public DNS.</p>
+        <p class="q">Will this get me into the inbox?</p>
+        <p>No promises. Passing SPF/DKIM/DMARC helps authentication; inbox placement also depends on content, reputation, and the receiver. <strong>DNS health ≠ inbox guarantee.</strong></p>
+        <p class="q">Can I share the report? Is there a /r/[id] link?</p>
+        <p>This is a static site, so there is no <code>/r/[id]</code> backend share link. The free summary stays on this page. The full Fix-it report is emailed to the address used at checkout after the $12 purchase.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>This tool checks public DNS authentication records (MX, SPF, DKIM, DMARC, BIMI). A passing score does <strong>not</strong> guarantee inbox placement, open rates, or deliverability outcomes. DNS health ≠ inbox guarantee. Not affiliated with any ESP.</p>
+      <p class="footer-links">
+        <a href="privacy/">Privacy Policy</a>
+        <a href="terms/">Terms of Service</a>
+        <a href="./">Home</a>
+      </p>
+    </div>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy — Domain Auth Fix-it</title>
+  <meta name="description" content="Stub privacy policy for the Domain Auth Fix-it DNS checker. DNS health ≠ inbox guarantee.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../">
+        <p class="brand-name">Domain Auth Fix-it</p>
+      </a>
+      <span class="header-label">Privacy</span>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap legal prose">
+      <h1>Privacy Policy (stub)</h1>
+      <p class="updated">Last updated: 2026-11-12. This is a pre-launch stub for the Domain Auth Fix-it static site. It has not been reviewed by counsel. Replace with approved text before relying on it as a formal policy.</p>
+      <div class="disclaimer" role="note">
+        <strong>Disclaimer:</strong> DNS health ≠ inbox guarantee. Passing SPF/DKIM/DMARC does not promise inbox placement, open rates, or deliverability outcomes.
+      </div>
+
+      <section>
+        <h2>What this product is</h2>
+        <p>Domain Auth Fix-it is a DNS authentication health checker. You submit a sending domain; your browser looks up public DNS records (MX, SPF, DKIM, DMARC, BIMI) via DNS-over-HTTPS and shows a score plus a free Top 3 summary. <strong>DNS health ≠ inbox guarantee.</strong> We do not send test mail, measure inbox placement, or promise open rates.</p>
+      </section>
+
+      <section>
+        <h2>Data we process</h2>
+        <ul>
+          <li><strong>Domain you submit</strong> — used only to query public DNS and generate a report. On this static site, the check runs in your browser.</li>
+          <li><strong>Optional DKIM selector</strong> — if you provide one, that selector name is probed.</li>
+          <li><strong>Last-checked domain in your browser</strong> — may be stored in localStorage so the thanks or cancel page can mention it. You can clear it with your browser data.</li>
+          <li><strong>Payment metadata (via Creem)</strong> — when checkout is enabled, Creem processes payment. The full Fix-it report is then emailed to the address used at checkout. We do not store full card numbers.</li>
+          <li><strong>Technical logs</strong> — GitHub Pages, DNS-over-HTTPS resolvers (Cloudflare / Google public resolvers), and the payment processor may keep ordinary request logs (for example IP, user agent, timestamps) for reliability and abuse prevention.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>What we do not collect for this MVP</h2>
+        <p>We do not require an account to run a free check. This static host does not keep a server-side report store or <code>/r/[id]</code> share link. We do not sell your domain checks. We do not use submitted domains to send you marketing email unless you separately opt in (not part of this MVP).</p>
+      </section>
+
+      <section>
+        <h2>Processors</h2>
+        <p>Hosting (GitHub Pages), DNS-over-HTTPS providers (Cloudflare / Google public resolvers), and Creem (when Live checkout is wired) may process data as needed to operate the service.</p>
+      </section>
+
+      <section>
+        <h2>Contact</h2>
+        <p>For privacy questions before a formal policy is published, contact the operator listed on the live site once a support email is published. Until then this page is a development stub and has not been reviewed by counsel.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>This tool checks public DNS authentication records (MX, SPF, DKIM, DMARC, BIMI). A passing score does <strong>not</strong> guarantee inbox placement, open rates, or deliverability outcomes. DNS health ≠ inbox guarantee. Not affiliated with any ESP.</p>
+      <p class="footer-links">
+        <a href="../privacy/">Privacy Policy</a>
+        <a href="../terms/">Terms of Service</a>
+        <a href="../">Home</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

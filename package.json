@@ -1,0 +1,6 @@
+{
+  "name": "domain-auth-fixit-pages",
+  "private": true,
+  "type": "module",
+  "description": "Static GitHub Pages site for Domain Auth Fix-it. Not a Node app."
+}

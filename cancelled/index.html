@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Checkout cancelled — Domain Auth Fix-it</title>
+  <meta name="description" content="Checkout was cancelled. You can try again. DNS health ≠ inbox guarantee.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../">
+        <p class="brand-name">Domain Auth Fix-it</p>
+        <p class="brand-tag">Plain-English SPF, DKIM &amp; DMARC fixes</p>
+      </a>
+      <span class="header-label">Checkout</span>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <section class="card">
+        <h1>Checkout cancelled</h1>
+        <p class="lede">No charge was made. You can try again whenever you’re ready, or keep using the free summary on the home page.</p>
+        <p id="cancelled-domain" class="muted"></p>
+        <div class="disclaimer" role="note">
+          <strong>Disclaimer:</strong> DNS health ≠ inbox guarantee. Passing SPF/DKIM/DMARC does not promise inbox placement, open rates, or deliverability outcomes.
+        </div>
+        <p><a class="btn btn-ghost" href="../">Back to the domain check</a></p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>This tool checks public DNS authentication records (MX, SPF, DKIM, DMARC, BIMI). A passing score does <strong>not</strong> guarantee inbox placement, open rates, or deliverability outcomes. DNS health ≠ inbox guarantee. Not affiliated with any ESP.</p>
+      <p class="footer-links">
+        <a href="../privacy/">Privacy Policy</a>
+        <a href="../terms/">Terms of Service</a>
+        <a href="../">Home</a>
+      </p>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { recallCheck } from "../js/config.js";
+    const rec = recallCheck();
+    const el = document.getElementById("cancelled-domain");
+    if (el && rec.domain) {
+      el.textContent = `You can run another free check for ${rec.domain}, or try checkout again when you’re ready.`;
+    }
+  </script>
+</body>
+</html>
