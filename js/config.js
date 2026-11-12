@@ -30,7 +30,7 @@
  */
 
 export const BASE_PATH = "/domain-auth-fixit/";
-export const CHECKOUT_URL = "";
+export const CHECKOUT_URL = "https://www.creem.io/product/prod_1ohwE1GXukY8zV2uSxQ4xe";
 export const CHECKOUT_PARAM_STYLE = "query"; // "query" | "hash"
 export const PRICE_LABEL = "$12";
 

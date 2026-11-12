@@ -17,7 +17,7 @@ GitHub Pages (project site, source `/` on the default branch). No server, no pai
 
 Edit `js/config.js`:
 
-- `CHECKOUT_URL` — leave `""` until a real checkout URL exists. Do not invent a Creem or payment link. When empty, the $12 button explains that checkout is being connected.
+- `CHECKOUT_URL` — official Creem product/checkout link for Domain Auth Fix-it Report ($12 one-time, `prod_1ohwE1GXukY8zV2uSxQ4xe`). Creem also collects a required “Sending domain” field (and optional DKIM selector) at checkout for email fulfillment.
 - `CHECKOUT_PARAM_STYLE` — `"query"` (default) or `"hash"`.
 
 When `CHECKOUT_URL` is set, the Unlock button sends the buyer there and appends:

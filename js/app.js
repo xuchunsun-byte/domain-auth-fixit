@@ -76,7 +76,7 @@ function renderResults({ domain, score, topIssues }) {
 
   const ctaHtml = checkoutConfigured
     ? `<button type="button" class="btn btn-primary" id="unlock-btn">Unlock full Fix-it — ${escapeHtml(PRICE_LABEL)}</button>
-       <p class="micro">You will be sent to checkout. The full report is emailed to the address used at checkout — it is not unlocked on this page. DNS health ≠ inbox guarantee.</p>`
+       <p class="micro">You will be sent to checkout ($12 one-time). Enter your sending domain there (required). The full report is emailed to the address used at checkout — it is not unlocked on this page. DNS health ≠ inbox guarantee.</p>`
     : `<button type="button" class="btn btn-primary" id="unlock-btn" aria-describedby="checkout-pending">Unlock full Fix-it — ${escapeHtml(PRICE_LABEL)}</button>
        <p id="checkout-pending" class="micro" role="status">Checkout is being connected. The ${escapeHtml(PRICE_LABEL)} Fix-it report is not available for purchase on this page yet. We will not invent a payment link.</p>
        <p class="micro">DNS health ≠ inbox guarantee.</p>`;
