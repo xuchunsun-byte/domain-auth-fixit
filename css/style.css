@@ -74,7 +74,9 @@ img { max-width: 100%; }
   font-size: 0.75rem;
   padding: 0.25rem 0.65rem;
   white-space: nowrap;
+  text-decoration: none;
 }
+a.badge:hover { background: #e4e4e7; }
 .header-label { font-size: 0.75rem; color: var(--muted); }
 
 main {
@@ -183,6 +185,15 @@ input[type="text"]:focus { box-shadow: 0 0 0 2px #a1a1aa; }
 .tier ul { margin: 0.5rem 0 0; padding-left: 1.1rem; font-size: 0.875rem; }
 .tier-paid ul { color: #d4d4d8; }
 .tier li + li { margin-top: 0.25rem; }
+.checkout-cta { width: 100%; margin-top: 0.6rem; }
+.tier-paid .btn-on-dark {
+  margin-top: 1rem;
+  width: 100%;
+  background: #fff;
+  color: #18181b;
+}
+.tier-paid .btn-on-dark:hover { background: #f4f4f5; }
+.tier-paid .micro { color: #a1a1aa; }
 
 .prose { font-size: 0.875rem; color: #3f3f46; }
 .prose p { margin: 0 0 0.75rem; }
